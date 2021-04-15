@@ -1,0 +1,23 @@
+jms_serializer:
+  handlers:
+    datetime:
+      default_format: "Y-m-d\\TH:i:sP"
+      default_timezone: "UTC"
+
+imports:
+  - { resource: parameters.yml }
+  - { resource: security.yml }
+  - { resource: services.yml }
+
+parameters:
+  locale: en
+  jms_serializer.camel_case_naming_strategy.class: JMS\Serializer\Naming\IdenticalPropertyNamingStrategy
+
+# ...
+
+
+framework:
+  # ...
+  serializer:
+    enabled: false
+# ...
